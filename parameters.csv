@@ -1,0 +1,104 @@
+module,name,symbol,value,units,plausible_range,calibrate,source_note
+forcing,surface_temperature_base_C,T0,20,degC,5-30,no,scenario definition
+forcing,surface_temperature_diel_amplitude_C,A_diel,5,degC,0-10,yes,local surface-temperature record
+forcing,heatwave_delta_C,DeltaT_heat,6,degC,2-10,no,scenario definition
+forcing,cooling_delta_C,DeltaT_cool,5,degC,2-10,no,scenario definition
+forcing,seasonal_amplitude_C,A_season,10,degC,3-15,no,scenario definition
+heat,rho_water_kg_m3,rho_w,998,kg m-3,995-1000,no,physical constant
+heat,heat_capacity_water_J_kg_K,c_w,4182,J kg-1 K-1,4170-4190,no,physical constant
+heat,effective_surface_heat_transfer_W_m2_K,h_eff,18,W m-2 K-1,5-40,yes,infer from water-temperature response
+heat,water_sediment_heat_exchange_d,tau_ws,4,d,0.5-15,yes,reduced-order interface exchange
+heat,sediment_thermal_response_d,tau_s,0.8,d,0.1-10,yes,infer from sediment thermistors
+heat,bed_light_heating_C_d,beta_I,1.2,degC d-1,0-5,yes,effective absorbed bed irradiance
+hydrodynamics,epilimnion_fraction,f_epi,0.4,dimensionless,0.2-0.8,yes,profile-defined layer geometry
+hydrodynamics,minimum_layer_depth_m,d_min,0.01,m,0.005-0.1,no,numerical layer floor
+hydrodynamics,interlayer_exchange_mixed_m_d,Kz_mix,1.2,m d-1,0.1-10,yes,tracer or turbulence calibration
+hydrodynamics,interlayer_exchange_stratified_m_d,Kz_strat,0.008,m d-1,0.0001-0.1,yes,tracer or turbulence calibration
+hydrodynamics,mixed_regime_multiplier,m_mix,2.5,dimensionless,1-10,yes,continuously mixed control
+hydrodynamics,diel_night_mixing_multiplier,m_night,3,dimensionless,0-20,yes,nocturnal convection calibration
+hydrodynamics,ventilation_mixing_multiplier,m_vent,12,dimensionless,2-50,yes,storm or cooling-event calibration
+hydrodynamics,stratification_build_d_1,k_strat,1.5,d-1,0.05-10,yes,density-profile calibration
+hydrodynamics,stratification_decay_d_1,k_decay,0.18,d-1,0.01-5,yes,density-profile calibration
+hydrodynamics,convective_mixing_decay_d_1,k_conv,2,d-1,0.1-20,yes,nighttime cooling calibration
+hydrodynamics,ventilation_stratification_decay_d_1,k_vent_decay,8,d-1,1-50,yes,event-profile calibration
+hydrodynamics,stratification_depth_half_m,d_half,0.25,m,0.05-2,yes,morphometry and forcing calibration
+hydrodynamics,stratification_temperature_scale_C,T_scale,2,degC,0.2-10,yes,density-gradient calibration
+hydrodynamics,stratification_state_threshold,S_crit,0.35,dimensionless,0.1-0.8,yes,state-classification sensitivity analysis
+oxygen,k_O2_air_m_d,k2_O2,0.18,m d-1,0.02-1,yes,tracer or wind calibration
+oxygen,water_respiration_uM_d,Rw,4,uM d-1,0-30,yes,dark bottle or diel inversion
+oxygen,sediment_oxygen_demand_mmol_m2_d,SOD,8,mmol m-2 d-1,0.5-30,yes,benthic chamber and microprofile
+oxygen,K_O2_uM,K_O2,20,uM,1-80,yes,oxic process half saturation
+oxygen,K_O2_inhibition_uM,K_iO2,10,uM,1-50,yes,anoxic process inhibition
+oxygen,K_O2_consumption_uM,K_O2_cons,1,uM,0.05-20,yes,smooth oxygen limitation near anoxia
+carbon,V_OM_mmol_m2_d,V_OM,8,mmol m-2 d-1,0.1-30,yes,illustrative weak prior
+carbon,Q10_OM,Q10_OM,2,dimensionless,1.2-4,yes,independent incubations
+carbon,labile_carbon_fraction,f_C,0.55,dimensionless,0.05-1,yes,substrate characterization
+carbon,k_CO2_swi_m_d,k_CO2_swi,0.008,m d-1,0.0005-0.05,yes,porewater-gradient calibration
+carbon,k_CO2_air_m_d,k_CO2_air,0.25,m d-1,0.02-1,yes,gas-transfer calibration
+carbon,CO2_equilibrium_uM,CO2_eq,15,uM,5-40,yes,calculate from atmosphere pH alkalinity
+carbon,water_CO2_production_uM_d,R_CO2w,4,uM d-1,0-30,yes,external water-column process
+carbon,photosynthetic_CO2_per_O2,PQ_inv,1,dimensionless,0.7-1.4,yes,only when external productivity is nonzero
+methane,V_meth_mmol_m2_d,V_meth,4,mmol m-2 d-1,0.01-20,yes,illustrative weak prior
+methane,Q10_meth,Q10_meth,3,dimensionless,1.2-8,yes,independent incubations
+methane,K_NO3_inhibition_uM,K_iNO3,20,uM,1-200,yes,electron-acceptor suppression
+methane,K_SO4_inhibition_uM,K_iSO4,100,uM,10-2000,yes,electron-acceptor suppression
+methane,K_Fe_inhibition_mmol_m2,K_iFe,5,mmol m-2,0.1-50,yes,electron-acceptor suppression
+methane,V_AeMO_sed_mmol_m2_d,V_AeMO_s,1.2,mmol m-2 d-1,0.01-10,yes,13CH4 oxic incubation
+methane,V_AeMO_water_uM_d,V_AeMO_w,8,uM d-1,0.01-50,yes,water-column incubation
+methane,Q10_AeMO,Q10_AeMO,2,dimensionless,1.1-4,yes,separate from methanogenesis
+methane,K_CH4_AeMO_uM,K_CH4_AeMO,20,uM,1-300,yes,local kinetics
+methane,k_CH4_swi_m_d,k_CH4_swi,0.006,m d-1,0.0001-0.05,yes,porewater-gradient calibration
+methane,k_CH4_air_m_d,k_CH4_air,0.16,m d-1,0.01-1,yes,gas-transfer calibration
+methane,CH4_equilibrium_uM,CH4_eq,0.003,uM,0.001-0.01,no,atmospheric equilibrium approximation
+aom,V_AOM_NO3_mmol_m2_d,V_AOM_NO3,0.35,mmol m-2 d-1,0-5,yes,13CH4 plus nitrate treatment
+aom,V_AOM_SO4_mmol_m2_d,V_AOM_SO4,0.35,mmol m-2 d-1,0-5,yes,13CH4 plus sulfate treatment
+aom,V_AOM_Fe_mmol_m2_d,V_AOM_Fe,0.2,mmol m-2 d-1,0-5,yes,13CH4 plus FeIII treatment
+aom,Q10_AOM,Q10_AOM,1.5,dimensionless,1-4,yes,fixed in reduced M3; estimate by antecedent water-table block when data permit
+aom,K_CH4_AOM_uM,K_CH4_AOM,414,uM,50-2000,yes,Lake Orn weak prior only
+aom,K_NO3_AOM_uM,K_NO3_AOM,30,uM,1-500,yes,wide weak prior
+aom,K_SO4_AOM_uM,K_SO4_AOM,31,uM,1-500,yes,Lake Orn weak prior only
+aom,K_Fe_AOM_mmol_m2,K_Fe_AOM,5,mmol m-2,0.1-100,yes,wide weak prior
+aom,NO3_per_CH4_AOM,nu_NO3,1,mmol mmol-1,0.5-2,yes,effective stoichiometry
+aom,SO4_per_CH4_AOM,nu_SO4,1,mmol mmol-1,0.5-1.2,yes,effective stoichiometry
+aom,Fe_per_CH4_AOM,nu_Fe,8,mmol mmol-1,1-8,yes,effective stoichiometry
+aom,Fe_regeneration_mmol_m2_d,R_Fe_regen,0.05,mmol m-2 d-1,0-2,yes,optional oxidation input
+nitrogen,V_nitrification_mmol_m2_d,V_nit,1.5,mmol m-2 d-1,0.01-10,yes,15NH4 treatment
+nitrogen,Q10_nitrification,Q10_nit,2,dimensionless,1.1-4,yes,process-specific prior
+nitrogen,nitrification_N2O_yield,y_nit,0.008,dimensionless,0.001-0.1,yes,do not fix across DO
+nitrogen,nitrification_suboxic_multiplier,m_suboxic,4,dimensionless,0-20,yes,suboxic yield enhancement
+nitrogen,nitrification_O2_optimum_uM,O2_opt,40,uM,5-120,yes,suboxic peak location
+nitrogen,nitrification_O2_width_uM,O2_width,35,uM,5-150,yes,suboxic peak width
+nitrogen,V_denitrification_mmol_m2_d,V_denit,2,mmol m-2 d-1,0.01-15,yes,15NO3 treatment
+nitrogen,Q10_denitrification,Q10_denit,2.6,dimensionless,1.2-5,yes,freshwater sediment weak prior
+nitrogen,K_NO3_denitrification_uM,K_NO3_denit,20,uM,1-300,yes,local kinetics
+nitrogen,denitrification_N2O_yield,y_denit,0.08,dimensionless,0.005-0.8,yes,disturbance and redox dependent
+nitrogen,V_N2O_reduction_mmol_m2_d,V_nosZ,0.25,mmol m-2 d-1,0-5,yes,15N2O and N2 measurement
+nitrogen,Q10_N2O_reduction,Q10_nosZ,2,dimensionless,1-5,yes,process-specific prior
+nitrogen,K_N2O_reduction_uM,K_N2Ored,0.1,uM,0.005-10,yes,local kinetics
+nitrogen,k_N2O_swi_m_d,k_N2O_swi,0.008,m d-1,0.0001-0.05,yes,porewater-gradient calibration
+nitrogen,k_N2O_air_m_d,k_N2O_air,0.18,m d-1,0.01-1,yes,gas-transfer calibration
+nitrogen,N2O_equilibrium_uM,N2O_eq,0.012,uM,0.005-0.03,yes,temperature and pressure calculation
+transport,gravity_m_s2,g,9.80665,m s-2,9.80-9.82,no,physical constant
+transport,atmospheric_pressure_Pa,P_atm,101325,Pa,80000-105000,yes,measured forcing
+transport,bubble_threshold_1atm_uM,C_bub_1atm,800,uM,300-3000,yes,effective mixed-gas nucleation threshold
+transport,bubble_capillary_equivalent_uM,C_cap,100,uM,0-2000,yes,sediment structure dependent
+transport,bubble_nucleation_time_d,tau_nuc,0.4,d,0.02-10,yes,pressure-step experiment
+transport,bubble_capacity_base_mmol_m2,B0,2,mmol m-2,0.1-30,yes,sediment gas inventory
+transport,bubble_capacity_depth_slope_mmol_m3,Bd,10,mmol m-3,0-100,yes,pressure-step experiment
+transport,bubble_release_time_d,tau_rel,0.15,d,0.01-5,yes,bubble-trap time series
+transport,drawdown_release_factor,k_draw,4,dimensionless,0-20,yes,water-level manipulation
+transport,bubble_dissolution_length_m,L_diss,0.8,m,0.05-5,yes,bubble size and transfer model
+transport,sediment_porosity,phi,0.8,dimensionless,0.3-0.95,yes,core measurement
+transport,active_sediment_depth_m,L_s,0.1,m,0.02-0.3,yes,profile-defined reactive layer
+transport,acceptor_exchange_d_1,k_EA,0.08,d-1,0.001-1,yes,bottom-water and porewater profiles
+initial,initial_temperature_C,T_init,20,degC,5-30,yes,observed initial condition
+initial,initial_O2_uM,O2_init,180,uM,0-400,yes,observed initial condition
+initial,initial_FeIII_mmol_m2,Fe_init,12,mmol m-2,0-200,yes,sequential extraction
+initial,initial_CH4w_uM,CH4w_init,2,uM,0-1000,yes,observed initial condition
+initial,initial_CH4s_uM,CH4s_init,700,uM,0-10000,yes,porewater profile
+initial,initial_CO2w_uM,CO2w_init,60,uM,0-3000,yes,DIC pH alkalinity
+initial,initial_CO2s_uM,CO2s_init,500,uM,0-10000,yes,porewater DIC
+initial,initial_N2Ow_uM,N2Ow_init,0.02,uM,0-10,yes,observed initial condition
+initial,initial_N2Os_uM,N2Os_init,0.2,uM,0-100,yes,porewater profile
+initial,initial_bubble_store_mmol_m2,B_init,4,mmol m-2,0-100,yes,gas inventory or pressure-step inference
+initial,initial_stratification_index,S_init,0,dimensionless,0-1,yes,initial density profile

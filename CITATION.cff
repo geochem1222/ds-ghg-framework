@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite the fixed software release used in your work."
+type: software
+title: "Depth-state-greenhouse-gas framework"
+version: 1.0.13
+date-released: 2026-11-22
+license: MIT
+url: "https://github.com/geochem1222/ds-ghg-framework"
+repository-code: "https://github.com/geochem1222/ds-ghg-framework"
+authors:
+  - name: "DS-GHG framework authors"
+abstract: "An illustrative two-layer sediment-water greenhouse-gas model, matched process-evaluation designs, and conceptual figure scripts accompanying the depth-state-greenhouse-gas framework."

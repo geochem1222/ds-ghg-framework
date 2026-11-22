@@ -1,0 +1,14 @@
+DS-GHG Supplementary Code 1.0.13 (Supplementary Information companion)
+Prepared: 2026-11-22
+Status: illustrative and uncalibrated
+
+This documentation release connects the complete source and reproducible
+inputs to the design-first Supplementary Information. Detailed commentary
+now includes the seconds-to-days heat-transfer conversion, mixing-dependent
+stratification build term and regime scaling of layer exchange used by the code.
+Numerical source, tests, parameters, scenarios, dependencies and licence
+retain exactly the bytes of version 1.0.12.
+
+Archived execution record: 24 October 2026; Python 3.12.14; matplotlib 3.11.0;
+numpy 2.4.5; pandas 3.0.5; scipy 1.18.1. Nine checks passed and 23 scenarios
+completed on that date. This packaging revision preserves that execution record.

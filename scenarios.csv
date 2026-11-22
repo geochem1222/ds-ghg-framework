@@ -1,0 +1,24 @@
+scenario_id,forcing,depth_m,duration_d,Kd_m_1,mixing_factor,productivity_mmolO2_m2_d,NO3_boundary_uM,SO4_boundary_uM,hydrodynamic_regime,notes
+D05_diurnal,diurnal,0.05,30,2,1,0,20,100,mixed,baseline no plants external productivity set to zero
+D15_diurnal,diurnal,0.15,30,2,1,0,20,100,mixed,baseline no plants external productivity set to zero
+D30_diurnal,diurnal,0.30,30,2,1,0,20,100,mixed,baseline no plants external productivity set to zero
+D60_diurnal,diurnal,0.60,30,2,1,0,20,100,mixed,baseline no plants external productivity set to zero
+D100_diurnal,diurnal,1.00,30,2,1,0,20,100,mixed,baseline no plants external productivity set to zero
+D15_heatwave,heatwave,0.15,30,2,1,0,20,100,mixed,eight-day warming perturbation
+D60_heatwave,heatwave,0.60,30,2,1,0,20,100,mixed,eight-day warming perturbation
+D15_cooling,cooling,0.15,30,2,1,0,20,100,mixed,eight-day cooling perturbation
+D60_cooling,cooling,0.60,30,2,1,0,20,100,mixed,eight-day cooling perturbation
+D15_static,static,0.15,30,2,1,0,20,100,mixed,constant surface-temperature control
+D60_static,static,0.60,30,2,1,0,20,100,mixed,constant surface-temperature control
+D60_drawdown,drawdown,0.60,30,2,1,0,20,100,mixed,two-day drawdown from 60 to 12 cm
+D60_rise_fall,rise_fall,0.60,30,2,1,0,20,100,mixed,rise high-water hold drawdown and partial re-rise
+D30_nitrate_rich,diurnal,0.30,30,2,1,0,300,100,mixed,nitrate-rich AOM endpoint
+D30_sulfate_rich,diurnal,0.30,30,2,1,0,20,2000,mixed,sulfate-rich AOM endpoint
+D30_clear,diurnal,0.30,30,0.5,1,0,20,100,mixed,clear-water optical endpoint
+D30_turbid,diurnal,0.30,30,5,1,0,20,100,mixed,turbid-water optical endpoint
+D30_weak_mix,diurnal,0.30,30,2,0.5,0,20,100,mixed,weak mixing endpoint
+D30_strong_mix,diurnal,0.30,30,2,2,0,20,100,mixed,strong mixing endpoint
+D60_seasonal,seasonal,0.60,90,2,1,0,20,100,mixed,seasonal forcing sensitivity run
+D30_diel_state,diurnal,0.30,30,2,0.5,0,20,100,diel,daytime stratification with stronger nocturnal mixing
+D100_persistent_state,diurnal,1.00,30,2,0.35,0,20,100,persistent,persistent weak-mixing comparison
+D100_ventilation_state,diurnal,1.00,30,2,0.35,0,20,100,ventilation,persistent stratification interrupted by a mixing event

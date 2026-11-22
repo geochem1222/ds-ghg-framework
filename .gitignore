@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+outputs/
+figures/candidates/
+figures/*.pdf
+figures/*.svg
+figures/*.png
+figures/*.tiff
+figures/*_layout_checks.json
+figures/*_grayscale.png
+figures/figure3_conceptual_curves.csv
+.DS_Store
+Thumbs.db
